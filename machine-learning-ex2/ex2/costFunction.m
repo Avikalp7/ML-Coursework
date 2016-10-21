@@ -19,14 +19,14 @@ grad = zeros(size(theta));
 %
 % Note: grad should have the same dimensions as theta
 %
-hX = sigmoid(X*theta);
-lX = log(hX);
-s1 = (y')*lX;
-lonemX = log(ones(size(hX)) - hX);
-onemy = ones(size(y)) - y;
-s2 = onemy' * lonemX;
-J = (-1/m) * (s1 + s2);
-grad = (1/m) * X' * (hX - y);
+hX = sigmoid(X*theta);				% hypothesis answer
+lX = log(hX);					% log of hX
+s1 = (y')*lX;					% first term in sum for cost function
+lonemX = log(ones(size(hX)) - hX);		% log of one minus hX
+onemy = ones(size(y)) - y;			% one minus y
+s2 = onemy' * lonemX;				% second term in sum for cost function	
+J = (-1/m) * (s1 + s2);		
+grad = (1/m) * X' * (hX - y);			
 
 
 
