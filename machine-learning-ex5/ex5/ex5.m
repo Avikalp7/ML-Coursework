@@ -92,7 +92,6 @@ ylabel('Water flowing out of the dam (y)');
 hold on;
 plot(X, [ones(m, 1) X]*theta, '--', 'LineWidth', 2)
 hold off;
-
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
@@ -218,3 +217,21 @@ end
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
+
+size(Xtest)
+lambda = 3;
+theta = trainLinearReg(X_poly, y, lambda);
+testError = linearRegCostFunction(X_poly_test, ytest, theta, 0);
+fprintf('Test error is : ');
+testError
+
+fprintf('Program paused. Press enter to continue.\n');
+pause;
+
+clear ; close all; clc
+
+
+
+
+
+
